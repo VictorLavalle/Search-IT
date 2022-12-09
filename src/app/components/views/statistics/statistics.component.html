@@ -1,2 +1,27 @@
 <p>statistics works!</p>
 <app-nav-bar></app-nav-bar>
+
+<div *ngIf="statistics !== undefined">
+  <h3>Espacio ocupado del disco: {{ statistics.disk_pct }} %</h3>
+  Número de documentos en el disco: {{ statistics.docs }}
+  <h3>Cantidad de memoria usada: {{ statistics.mem_pct }} %</h3>
+  CPU utilizado por el servidor: {{ statistics.cpu_pct }} %
+  <h3>
+    Estimación de documentos hasta que se llene el disco:
+    {{ statistics.estimated_docs_until_full }}
+  </h3>
+
+  <button (click)="donwloadPdfReport($event)" title="data.pdf">
+    Descargar reporte en PDF
+  </button>
+  <button (click)="downloadCsvReport($event)" title="data.cvs">
+    Descargar reporte en CSV
+  </button>
+
+
+
+
+</div>
+<div id="divChart">
+    <canvas id="myChart"></canvas>
+  </div>
