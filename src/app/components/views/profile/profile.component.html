@@ -1,2 +1,12 @@
 <app-nav-bar></app-nav-bar>
-<p>profile works!</p>
+
+<h1>¡¡Bienvenido!!</h1>
+
+<h2>Usuario: {{currentUser.user}}</h2>
+
+<h2>Usted cuenta con los siguientes permisos:</h2>
+
+<ul>
+  <li *ngFor="let permiso of currentUser.roles">{{permiso}}</li>
+</ul>
+

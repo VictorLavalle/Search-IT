@@ -1,3 +1,5 @@
+import { CookieService } from 'ngx-cookie-service';
+import { CurrentUser } from './../../../interfaces/current-user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+   public currentUser !: CurrentUser;
+   private dictionaryRoles = {"upload": "Subir documentos", "admin": "Administrador", "query": "Realizar consultas","user_mgmt": "Gestionar usuarios"};
+   public roles : any[] = [];
+  constructor(private cookieService : CookieService) { }
 
   ngOnInit(): void {
+    this.currentUser = JSON.parse(this.cookieService.get('currentUser'));
+
   }
 
 }

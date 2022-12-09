@@ -1,1 +1,7 @@
 <app-nav-bar></app-nav-bar>
+
+
+<form>
+    <input type="file" (change)="onFileChange($event)" />
+    <button (click)="uploadFile()">Upload</button>
+  </form>
