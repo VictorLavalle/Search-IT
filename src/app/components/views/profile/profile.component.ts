@@ -19,4 +19,10 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  public logout():void {
+    this.cookieService.delete('currentUser');
+    this.cookieService.delete('token');
+    window.location.reload();
+  }
+
 }

@@ -1,3 +1,7 @@
+import { PermissionUploadGuard } from './Auth/permissions/permission-upload.guard';
+import { PermissionUserManagementGuard } from './Auth/permissions/permission-user-management.guard';
+import { PermissionStatisticsGuard } from './Auth/permissions/permission-statistics.guard';
+import { PermissionsSerchGuard } from './Auth/permissions/permissions-serch.guard';
 import { EditUserComponent } from './components/views/edit-user/edit-user.component';
 import { UserNoAuthGuard } from './Auth/UserNoAuth/user-no-auth.guard';
 import { UserAuthGuard } from './Auth/UserAuth/user-auth.guard';
@@ -15,12 +19,12 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login',component: LoginComponent,canActivate: [UserNoAuthGuard], pathMatch: 'full'},
-  { path: 'home',component: HomeComponent,canActivate: [UserAuthGuard], pathMatch: 'full'},
-  { path: 'search', component: SearchDocumentsComponent,canActivate: [UserAuthGuard] ,pathMatch: 'full'},
-  { path: 'statistics', component: StatisticsComponent, canActivate: [UserAuthGuard],pathMatch: 'full'},
+  { path: 'home',component: HomeComponent,canActivate: [UserAuthGuard,PermissionUploadGuard], pathMatch: 'full'},
+  { path: 'search', component: SearchDocumentsComponent,canActivate: [UserAuthGuard,PermissionsSerchGuard] ,pathMatch: 'full'},
+  { path: 'statistics', component: StatisticsComponent, canActivate: [UserAuthGuard,PermissionStatisticsGuard],pathMatch: 'full'},
   { path: 'login', component:LoginComponent, pathMatch: 'full'},
-  { path: 'management', component: UsersManagementComponent,canActivate: [UserAuthGuard], pathMatch: 'full'},
-  { path: 'edit/:id', component: EditUserComponent,canActivate: [UserAuthGuard], pathMatch: 'full'},
+  { path: 'management', component: UsersManagementComponent,canActivate: [UserAuthGuard,PermissionUserManagementGuard], pathMatch: 'full'},
+  { path: 'edit/:id', component: EditUserComponent,canActivate: [UserAuthGuard,PermissionUserManagementGuard], pathMatch: 'full'},
   { path: 'profile', component: ProfileComponent,canActivate: [UserAuthGuard] ,pathMatch: 'full'},
   { path: 'NoAuth', component:NoAuthComponent, pathMatch: 'full'},
   { path: '**', component:Page404Component, pathMatch: 'full'},
