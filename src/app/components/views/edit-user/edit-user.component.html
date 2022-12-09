@@ -1,0 +1,32 @@
+<h2>Modificar usuario</h2>
+
+<form [formGroup]="updateUserForm">
+  <label for="">Contraseña</label>
+  <input type="password" formControlName="password" />
+  <div>
+    <p>Permisos</p>
+    <label for="">Administrador</label>
+    <input type="checkbox" name="admin" id="" formControlName="checkboxAdmin" />
+    <label for="">Buscar Documentos</label>
+    <input type="checkbox" name="query" id="" formControlName="checkboxQuery" />
+    <label for="">Subir documentos</label>
+    <input
+      type="checkbox"
+      name="upload"
+      id=""
+      formControlName="checkboxUpload"
+    />
+    <label for="">Gestionar Usuarios</label>
+    <input
+      type="checkbox"
+      name="user_mgmt"
+      id=""
+      formControlName="checkboxUserMgmt"
+    />
+  </div>
+  <button (click)="updateUser()">Modificar usuario</button>
+
+</form>
+<button>
+    <a [routerLink]="['/management']">Regresar a gestion de usuario</a>
+  </button>
