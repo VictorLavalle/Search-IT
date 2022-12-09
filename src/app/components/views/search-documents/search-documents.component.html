@@ -17,13 +17,21 @@
 
               <div class="searchBar">
                 <input name="query" type="text" placeholder="Search..." class="form-control bg-light my-4"
-                  [(ngModel)]="query" (keydown.enter)="search()" />
+                  [(ngModel)]="query" (keydown.enter)="search()" (keyup)="showInput()"/>
                 <button class="btn btn-outline-info" (click)="search()">Search</button>
               </div>
 
+
+              <div class="results" *ngIf="suggest!== ''">
+                <h5 class="subtitle">
+                  <b>Quisiste decir: </b><span (click)="getSuggest()" >{{suggest}}</span>
+                </h5>
+              </div>
+
+
               <div class="results">
                 <h2 class="subtitle">
-                  <!-- <b>Resultados : </b><span>{{ res.total_count }}</span>  -->
+                  <b>Resultados : </b><span>{{ docs.length }}</span>
                 </h2>
               </div>
 
