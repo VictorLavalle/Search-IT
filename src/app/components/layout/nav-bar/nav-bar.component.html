@@ -1,12 +1,19 @@
-<nav>
-  <a routerLink="/home" >Principal</a>
-  <br>
-  <a routerLink="/search">Buscar documentos</a>
-  <br>
-  <a routerLink="/profile" >Ver perfil</a>
-  <br>
-  <a routerLink="/statistics" >Estadisticas del sistema</a>
-  <br>
-  <a routerLink="/management" >Gestion de usuarios</a>
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()">S</button>
+    <div class="logo-text" @fadeInOut *ngIf="collapsed">Search.IT</div>
+    <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+      <i class="bi bi-x-lg close-icon"></i>
+    </button>
+  </div>
 
-</nav>
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item" *ngFor="let data of navData">
+      <a href="" class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <span class="sidenav-link-icon" [ngClass]="data.icon"></span>
+        <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed"> {{ data.name }} </span>
+      </a>
+    </li>
+  </ul>
+</div>
