@@ -1,3 +1,4 @@
+import { Suggested } from './../../../interfaces/suggets';
 import { SuggetsService } from './../../../services/suggets/suggets.service';
 import { CurrentUser } from './../../../interfaces/current-user';
 import { CookieService } from 'ngx-cookie-service';
@@ -15,7 +16,7 @@ import { Doc } from 'src/app/interfaces/docs-response';
 })
 export class SearchDocumentsComponent implements OnInit {
   public query: string = '';
-  public suggest: string = 'python';
+  public suggest: string = '';
 
   constructor(
     private searchService: SearchService,
@@ -33,9 +34,17 @@ export class SearchDocumentsComponent implements OnInit {
     console.log(this.query);
     this.searchService.search(this.query).subscribe((data: DocsResponse) => {
       this.docs = data.results[0].response.docs;
-      this.suggetService.getSuggets(this.query).subscribe((data) => {
-        let cutResponse = data.results.suggest.mySuggester
-        console.log(cutResponse);
+      console.log(this.docs);
+      this.suggetService.getSuggets(this.query).subscribe((response) => {
+        console.log(response);
+        let responseSuggets :any = Object.values(response.results.suggest.mySuggester);
+        if(responseSuggets[0].numFound>0){
+          let term = responseSuggets[0].suggestions[0].term;
+          this.suggest = term;
+        }else{
+          this.suggest = "";
+        }
+
       });
     });
   }
@@ -88,6 +97,10 @@ export class SearchDocumentsComponent implements OnInit {
 
   getSuggest() {
     console.log(this.suggest);
+    this.searchService.search(this.query).subscribe((data: DocsResponse) => {
+      this.docs = data.results[0].response.docs;
+      console.log(this.docs);
+    });
   }
 
   public searchBySuggets(): void {

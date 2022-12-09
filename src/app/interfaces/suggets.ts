@@ -31,3 +31,8 @@ export interface Suggestion {
     weight:  number;
     payload: string;
 }
+
+export interface Suggested {
+    numFound:    number;
+    suggestions: Suggestion[];
+}

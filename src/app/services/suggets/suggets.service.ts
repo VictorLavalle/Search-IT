@@ -15,10 +15,10 @@ export class SuggetsService {
   constructor(private http : HttpClient, private cookieService: CookieService) {   }
 
 
-  public getSuggets(searchString: string) :Observable<Suggest> {
+  public getSuggets(searchString: string) :Observable<any> {
     let Bearer = this.cookieService.get('token');
     let headers = new HttpHeaders({'Authorization': 'Bearer ' + Bearer});
-    return this.http.get<Suggest>(this.URL + searchString, {headers});
+    return this.http.get<any>(this.URL + searchString, {headers});
   }
 
 }
