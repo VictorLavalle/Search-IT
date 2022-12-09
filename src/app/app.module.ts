@@ -16,6 +16,7 @@ import { NoAuthComponent } from './components/views/no-auth/no-auth.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/layout/header/header.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     Page404Component,
     NoAuthComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
