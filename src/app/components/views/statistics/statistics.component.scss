@@ -1,5 +1,39 @@
-#divChart{
-    display: block;
-    width: 400px;
-    height: 400px;
+@import "global";
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        align-self: center;
+        margin-top: 3rem;
+
+        h3{
+            font-size: 1rem;
+            margin: 0.75rem auto;
+        }
+
+        button{
+            color: $whiteColor;
+            margin-right: 2rem;
+            margin-top: 1rem;
+        }
+
+        .card{
+            height: 30rem;
+            width: 90%;
+            margin-left: 5.5rem;
+        }
+       
+    }
+
+    #divChart{
+
+        display: block;
+        width: 500px;
+        height: 400px;
+    }
+    
 }
+

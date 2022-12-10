@@ -71,7 +71,7 @@ export class StatisticsComponent implements OnInit {
       data: {
           labels: ['PDF'],
           datasets: [{
-              label: '# of Votes',
+              label: 'Cantidad de documentos',
               data: [this.statistics.docs_pdf],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',

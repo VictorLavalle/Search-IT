@@ -8,20 +8,26 @@ section {
     .container {
         align-self: center;
         margin-top: 1rem;
+
+        .card {
+            height: 30rem;
+            width: 90%;
+            margin-left: 5.5rem;
+        }
     }
 }
 
-.searchBar{
+.searchBar {
     position: relative;
     margin: 1rem auto;
     margin-top: -2rem;
     width: 60%;
-    
-    input{
+
+    input {
         box-sizing: border-box;
         text-align: left !important;
         border: 2px solid rgba(36, 34, 34, 0.637);
-        border-radius: 15px!important;
+        border-radius: 15px !important;
         padding: 10px 15px 10px 45px;
         outline: none !important;
 
@@ -55,22 +61,22 @@ section {
         transform: translateY(-50%);
     }
 
-    button{
+    button {
         width: fit-content;
         height: fit-content;
         text-align: center;
-        margin:  auto;
+        margin: auto;
         margin-left: 1rem;
     }
 
 }
 
-#tableResults{
+#tableResults {
 
-    button{
+    button {
         width: fit-content;
         text-align: center;
-        margin:  auto;
+        margin: auto;
         margin-left: 1rem;
         font-size: 12px;
     }
