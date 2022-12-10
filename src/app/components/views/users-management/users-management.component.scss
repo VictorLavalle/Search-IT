@@ -1,0 +1,28 @@
+@import "global";
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        align-self: center;
+        margin-top: 3rem;
+
+        .card{
+            width: 90%;
+            margin-left: 5.5rem;
+
+            .left-column{
+                width: 50rem;
+            }
+
+            .right-column{
+                padding-left: 5rem;
+            }
+        }
+       
+    }
+    
+}
+
