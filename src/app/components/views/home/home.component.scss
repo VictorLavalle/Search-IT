@@ -1,0 +1,107 @@
+@import "global";
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        align-self: center;
+        margin-top: 5rem;
+
+        .file-upload-box {
+            border: 1px dashed gray;
+            height: 20rem;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .section-title-file {
+                display: inline-flex;
+                flex-direction: row;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 300;
+                color: $grayColor;
+                margin: 10px 0 15px 0;
+            }
+
+            button {
+                &:not(.remove-file) {
+                    padding: 10px 25px;
+                    font-size: 14px;
+                    font-weight: 300;
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    color: $grayColor;
+                    border: 1px solid gray;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: all 0.5s;
+                }
+
+                &:hover {
+                    background: $primaryColor;
+                    color: $whiteColor;
+                }
+            }
+
+            button#file-upload-btn {
+                margin: 2rem 0;
+                display: block;
+            }
+
+
+            input{
+                width: 50%;
+            }
+
+            .loading{
+                margin-top: 1.5rem;
+                display: none;
+            }
+
+            .alert{
+                display: none;
+            }
+
+        }
+
+
+        .file-upload-box.active {
+            border: 2px solid $secondaryColor;
+        }
+
+        button.remove-file {
+            background: transparent;
+            color: $grayColorVariation-1;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            font-weight: 100;
+            cursor: pointer;
+            transition: all 0.5s;
+            position: absolute;
+            display: none;
+
+            &:hover {
+                background: transparent;
+                color: $blackColor;
+                transition: all 0.5s;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 70%;
+            margin-left: 6.5rem !important;
+        }
+
+    }
+}
