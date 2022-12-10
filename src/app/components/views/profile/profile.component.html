@@ -1,19 +1,43 @@
-
+<app-header></app-header>
 <app-nav-bar></app-nav-bar>
 
-<h1>¡¡Bienvenido!!</h1>
+<section class="vh-50">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-20">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
 
-<h2>Usuario: {{currentUser.user}}</h2>
+              <p class="title text-center h1 fw-bold mb-5 mx-1 mx-md-4">
+                ¡ Hola {{currentUser.user}} ! <i class="bi bi-emoji-smile"></i>
+              </p>
 
-<h2>Usted cuenta con los siguientes permisos:</h2>
+              <hr />
 
-
-
-
-<ul>
-  <li *ngFor="let permiso of currentUser.roles">{{permiso}}</li>
-</ul>
+              <h2 class="mb-4">Usted cuenta con los siguientes permisos:</h2>
 
 
-<h3 (click)="logout()">HAZ CLICK PARA DESLOGUEARTE</h3>
+              <ul class="text-center">
+                <li *ngFor="let permiso of currentUser.roles">{{permiso}}</li>
+              </ul>
+
+              <div class="row justify-content-center mb-3">
+                <button class="btn btn-danger" (click)="logout()"><i class="bi bi-lock"></i> Cerrar Sesión</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
 
