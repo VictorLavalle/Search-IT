@@ -1,0 +1,82 @@
+@import "global";
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        align-self: center;
+        margin-top: 1rem;
+
+        .card {
+            width: 90%;
+            margin-left: 5.5rem;
+        }
+    }
+}
+
+.searchBar {
+    position: relative;
+    margin: 1rem auto;
+    margin-top: -2rem;
+    width: 60%;
+
+    input {
+        box-sizing: border-box;
+        text-align: left !important;
+        border: 2px solid rgba(36, 34, 34, 0.637);
+        border-radius: 15px !important;
+        padding: 10px 15px 10px 45px;
+        outline: none !important;
+
+        &:focus {
+            outline: none !important;
+            border-color: $blueColorVariation-3;
+        }
+
+        &:active {
+            outline: none !important;
+            border-color: $blackColor;
+        }
+
+        &:hover {
+            outline: none !important;
+            border-color: blackColor;
+        }
+
+        @media only screen and (max-width: 767px) {
+            width: 90%;
+        }
+    }
+
+    .search-icon {
+        color: $blackColor;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    button {
+        width: fit-content;
+        height: fit-content;
+        text-align: center;
+        margin: auto;
+        margin-left: 1rem;
+    }
+
+}
+
+#tableResults {
+
+    button {
+        width: fit-content;
+        text-align: center;
+        margin: auto;
+        margin-left: 1rem;
+        font-size: 12px;
+    }
+}

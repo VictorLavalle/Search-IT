@@ -1,0 +1,21 @@
+@import "global";
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        align-self: center;
+        margin-top: 3rem;
+
+        .card{
+            width: 60%;
+            margin-left: 15.5rem;
+
+            button{
+                width: 30%;
+            }
+        }
+    }
+}

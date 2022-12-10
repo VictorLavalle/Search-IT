@@ -1,0 +1,54 @@
+<app-header></app-header>
+<app-nav-bar></app-nav-bar>
+
+<section class="vh-50">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-20">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+
+              <p class="title text-center h1 fw-bold mb-5 mx-1 mx-md-4">
+                Estadísticas del servidor
+              </p>
+
+              <div class="col">
+                <div *ngIf="statistics !== undefined">
+
+                  <h3>Espacio ocupado del disco: {{ statistics.disk_pct }} %</h3>
+                  Número de documentos en el disco: {{ statistics.docs }}
+                  <h3>Cantidad de memoria usada: {{ statistics.mem_pct }} %</h3>
+                  CPU utilizado por el servidor: {{ statistics.cpu_pct }} %
+                  <h3>
+                    Estimación de documentos hasta que se llene el disco:
+                    {{ statistics.estimated_docs_until_full }}
+                  </h3>
+                
+                  <button class="btn btn-success" (click)="donwloadPdfReport($event)" title="data.pdf">
+                    <i class="bi bi-arrow-down-circle"></i> Descargar reporte en PDF
+                  </button>
+                
+                  <button class="btn btn-info"(click)="downloadCsvReport($event)" title="data.cvs">
+                    <i class="bi bi-arrow-down-circle"></i> Descargar reporte en CSV
+                  </button>
+                
+                </div>
+              </div>
+
+          
+              <div class="col">
+                <div id="divChart">
+                  <canvas id="myChart"></canvas>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

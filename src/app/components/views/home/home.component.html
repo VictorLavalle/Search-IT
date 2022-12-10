@@ -1,0 +1,52 @@
+<app-header></app-header>
+<app-nav-bar></app-nav-bar>
+
+<section class="section dashboard">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-upload"></i> Subir nuevo archivo
+            </h5>
+
+            <div class="file-upload-form">
+              <form class="dropzone text-center">
+                <div class="file-upload-box" id="file-upload">
+                  
+                  <input
+                    type="file"
+                    accept="application/pdf"
+                    name="resume"
+                    id="input-file-now"
+                    class="file-upload form-control"
+                    (change)="onFileChange($event)"
+                  />
+
+                  <button (click)="uploadFile()" id="file-upload-btn">
+                    <i class="bi bi-upload me-2"></i>Subir archivo
+                  </button>
+
+                  <div class="spinner-border loading" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                  </div>
+
+                  <div class="alert alert-success" role="alert">
+                   Archivo subido con éxito
+                  </div>
+                  <div class="alert alert-danger" role="alert">
+                    Hubo un error al subir tu archivo
+                  </div>
+                  
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>

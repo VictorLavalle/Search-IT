@@ -1,0 +1,28 @@
+@import "global";
+
+.bg-clr {
+    background-color: $whiteColor;
+
+    .bg {
+        background: none repeat scroll 0 0 $whiteColor;
+		box-shadow: 0 0 10px 0 rgb(34 41 47 / 10%);
+		display: flex;
+		align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.bar {
+    position: relative;
+    margin: 1rem auto;
+    margin-top: -2rem;
+    width: 35%;
+    height: 3rem;
+
+    @media screen and (max-width: 768px) {
+        width: 75%;
+		margin-left: 6.5rem !important;
+    }
+    
+}
+

@@ -1,0 +1,46 @@
+@import "global";
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        align-self: center;
+        margin-top: 3rem;
+
+        .card{
+            width: 60%;
+            margin-left: 15.5rem;
+
+            ul{
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                padding: 0;
+                margin: 0;
+                margin-bottom: 1rem;
+                li{
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $grayColorVariation-2;
+                    cursor: pointer;
+                    padding: 0.5rem 1rem;
+                    border-radius: 5px;
+                }
+            }
+
+            button.save{
+                width: 30%;
+            }
+
+            button.back{
+                width: 50%;
+                a{
+                    color: $blackColor;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
