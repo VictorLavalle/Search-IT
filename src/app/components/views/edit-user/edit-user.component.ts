@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditUserComponent implements OnInit {
   private id: string = '';
+  public success = false;
 
   public updateUserForm!: FormGroup;
   public user!: User;
@@ -83,6 +84,7 @@ export class EditUserComponent implements OnInit {
 
     this.usersService.putUsers(user).subscribe((user) => {
       console.log(user);
+      this.success = true;
       this.user = user;
       this.updateView();
     });
