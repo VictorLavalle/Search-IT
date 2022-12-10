@@ -18,7 +18,7 @@
 
                   <div class="mb-3">
                     <label class="form-label" for="username">Correo Electronico:</label>
-                    <input type="email" class="form-control" formControlName="username" name="username">
+                    <input type="email" class="form-control" formControlName="username" name="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                   </div>
 
                   <div class="mb-3">
@@ -64,8 +64,8 @@
                           <p *ngFor="let rol of user.roles">{{rol}}</p>
                         </td>
                         <td>
-                          <button><a [routerLink]="['/edit', user.id]">Modificar usuario</a></button>
-                          <button (click)="deleteUser($event)" title='{{user.id}}'>Eliminar Usuario </button>
+                          <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Editar Usuario"><a [routerLink]="['/edit', user.id]"> <i class="bi bi-pencil"></i></a></button>
+                          <button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom"  (click)="deleteUser($event)" title='{{user.id}}'> <i class="bi bi-trash3"></i></button>
                         </td>
                     </tbody>
                   </table>

@@ -19,6 +19,19 @@ section {
 
             .right-column{
                 padding-left: 5rem;
+
+                td{
+                    font-size: 12px;
+                }
+
+                button{
+                    font-size: 12px;
+                    margin-right: 5px;
+                    a{
+                        text-decoration: none;
+                        color: $whiteColor;
+                    }
+                }
             }
         }
        
