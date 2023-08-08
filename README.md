@@ -1,30 +1,41 @@
-# SearchIT
+# Search.IT
+<hr>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
+Este repositoro contiene el proyecto seleccionado para la materia de Mantenimiento de Software, impartida por el profesor Antonio Armando Aguileta Güemez.
 
-## Note:
-To install in a local machine this, you might encounter with some errors at the moment of do "npm i" so to avoid or fix this, type this instead: "npm i --legacy-peer-deps"
+## Entrando en contexto
 
-## Development server
+Este proyecto tenía una funcionalidad de indexar páginas web y aplicar un motor de búsqueda, para localizar estas páginas fácilmente. El proposito de la materia es darle mantenimiento en base a la calidad de procesos. Se puede apreciar el código original en la rama "código original"
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Prerrequisitos
 
-## Code scaffolding
+Se enlistan lo enecesario para poder instalar la aplicación
+- [Docker](https://www.docker.com/products/docker-desktop/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Instalación
 
-## Running unit tests
+Después de descargar o clonar el proyecto, en cada carpeta se encuentra un archivo .bat los cuales crean las imágenes y contenedores de docker
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Después de correr todos estos archivos .bat se debe verificar que todo esté corrienndo
 
-## Running end-to-end tests
+## Corriendo la aplicación
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+En el contenedor solr-front hacer click en la opción de visualizar en navegagor para desplegar la aplicación web (con el mantenimiento aplicado.)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Authors
+
+  - [**Víctor Lavalle**](https://github.com/VictorLavalle)
+  - [**Arturo Aguilar**](https://github.com/artrune)
+  - [**Eberth Mezeta**](https://github.com/EberthMezeta)
+  - [**Mario May**](https://github.com/MarioMay)
+  - [**Pedro Euan**](https://github.com/dongato99)
+
+Ver la lista [Contribuidores](https://github.com/orgs/The-WebOnes/people) que participaron en este proyecto.
+
+
+## Agradecimientos
+
+  - Gracias a todos esas personas que hacen tutoriales en Youtube y responden preguntas en Stack Overflow
